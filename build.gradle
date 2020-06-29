@@ -1,0 +1,24 @@
+defaultTasks 'clean', 'build'
+
+group 'exercise'
+version '0.1'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    useJUnitPlatform {
+        includeEngines 'junit-jupiter'
+    }
+}
+
+dependencies {
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.3.1'
+    testRuntime group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.3.1'
+    compile group: 'org.apache.commons', name: 'commons-collections4', version: '4.0'
+}
